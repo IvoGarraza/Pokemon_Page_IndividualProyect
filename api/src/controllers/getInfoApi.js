@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 
-const getInfo = async ()=>{
+const getInfoApi = async ()=>{
     try {
         // defino la url en una variable y creo un conjunto vacio de pokemones para luego agregarlos
         let url = 'https://pokeapi.co/api/v2/pokemon'
@@ -26,12 +26,11 @@ const getInfo = async ()=>{
             url = infoApi.data.next
             console.log(pokemones)
         } while (url != null && pokemones.length < 40);
-        console.log(pokemones)
+        /* console.log(pokemones) */
         /* return pokemones */
         //traigo la data de cada pokemon
         let pkInfo = await Promise.all(pokemones.map( async e => {
-            let pokemon = await axios.get(e.url,{headers:{"Accept-Encoding": "null"}
-            });
+            let pokemon = await axios.get(e.url,{ headers: {"Accept-Encoding": "null"}});
             return{
                 id: pokemon.data.id,
                 name: pokemon.data.name,
@@ -46,7 +45,8 @@ const getInfo = async ()=>{
                 defense: pokemon.data.stats[2].base_stat,
                 speed: pokemon.data.stats[5].base_stat,
                 height: pokemon.data.height,
-                weight: pokemon.data.weight
+                weight: pokemon.data.weight,
+                createdInDd: false,
             }
         }))
         console.log(pkInfo)
@@ -62,5 +62,5 @@ const getInfo = async ()=>{
 
 
 module.exports={
-    getInfo
+    getInfoApi
 }
