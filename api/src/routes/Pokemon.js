@@ -47,28 +47,37 @@ router.get('/:id', async (req, res) =>{
 router.post('/', async (req, res) =>{
     const { name, type, health, attack, defense, speed, height, weight} = req.body
     
-
-    try {
-        const pokemonCreated = Pokemon.create({
-            name,
-            health,
-            attack,
-            defense,
-            speed,
-            height,
-            weight
-        })
-        const typeDb = await Type.findAll({
-            where: {
-                name: type
-            }
-        })
-        pokemonCreated.addType(typeDb)
-        return res.status(200).send(pokemonCreated)
-
-    } catch (error) {
-        console.log(error)
-        return error
+    if(name){
+       const allPks = await getAllPokemons();
+       const poke = allPks.find( e => e.name === name.toLowerCase())
+       if(!poke){
+        try {
+            const pokemonCreated = Pokemon.create({
+                name,
+                health,
+                attack,
+                defense,
+                speed,
+                height,
+                weight
+            })
+            const typeDb = await Type.findAll({
+                where: {
+                    name: type
+                }
+            })
+            pokemonCreated.addType(typeDb)
+            return res.status(200).send(pokemonCreated)
+    
+        } catch (error) {
+            console.log(error)
+            return error
+        }
+       }else{
+        return res.status(404).send('Pokemon name already exist ')
+       }
+    }else{
+        return res.status(404).send('Pokemon name is obligatory')
     }
 })
 
