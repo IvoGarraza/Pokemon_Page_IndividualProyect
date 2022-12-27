@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'pokemon';
+    src: url('../../assets/Pokemon\ Solid.ttf');
+}
+
+.navbarContainer{
+    background-color: rgb(242, 49, 49);
+    -webkit-text-stroke: 0.5px black;
+    color:yellow;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+    font-family: 'pokemon';
+    border: 2px solid black;
+    -webkit-box-shadow: 0px 5px 19px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 19px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 19px -1px rgba(0,0,0,0.75);
+
+}
+
+.botonesNav a{
+    display: flex;
+
+    
+}
+
+.logoContainer{
+    margin-left: 2%;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+}
+
+.searchContainer input{
+    height: 25px;
+}
+
+.searchContainer img{
+    width: 2%;
+    
+}

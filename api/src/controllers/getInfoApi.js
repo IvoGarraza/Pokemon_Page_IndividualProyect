@@ -24,13 +24,14 @@ const getInfoApi = async ()=>{
             //agrego esos pokemones al conjunto creado anteriormente
             pokemones.push(...infoApiData);
             url = infoApi.data.next
-            console.log(pokemones)
-        } while (url != null && pokemones.length < 40);
+            /* console.log(pokemones) */
+        } while (url != null && pokemones.length < 100);
         /* console.log(pokemones) */
         /* return pokemones */
         //traigo la data de cada pokemon
         let pkInfo = await Promise.all(pokemones.map( async e => {
-            let pokemon = await axios.get(e.url,{ headers: {"Accept-Encoding": "null"}});
+            let pokemon = await axios.get(e.url, { headers: {"Accept-Encoding": "null"}});
+            console.log(pokemon)
             return{
                 id: pokemon.data.id,
                 name: pokemon.data.name,
@@ -49,7 +50,7 @@ const getInfoApi = async ()=>{
                 createdInDd: false,
             }
         }))
-        console.log(pkInfo)
+        /* console.log(pkInfo) */
         return pkInfo
     } catch (error) {
         console.log('algo fallo', error)
