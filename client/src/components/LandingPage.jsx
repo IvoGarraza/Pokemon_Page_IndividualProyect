@@ -2,15 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { buttonLanding } from '../styles/styles.jsx'
 import styled from 'styled-components'
+import Button from './Button/Button.jsx'
 
 const LandingPage = () => {
+  
   return (
     <landingStyle>
       <h1>Landing page</h1>
       <p>
         Welcome to Pokemon Page, here can fin a list of pokemons and his stats
       </p>
-      <Link to='/home'><buttonLanding>ENTRAR</buttonLanding></Link>
+      {/* <Link to='/home'><button id="reproductor">Ingresar</button></Link> */}
+      <Button></Button>
     </landingStyle>
   )
 }

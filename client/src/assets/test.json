@@ -1,0 +1,15 @@
+{
+    "id":"1",
+    "name":"Charmander",
+    "img":"sdsasd",
+    "type":{
+        "type":"fire"
+    },
+    "health":"39",
+    "attack":"52",
+    "defense":"43",
+    "speed":"65",
+    "height":"6",
+    "weight":85,
+    "createdInDb": false
+}
