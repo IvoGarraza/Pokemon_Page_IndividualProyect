@@ -16,7 +16,7 @@ router.get('/', async (req, res) =>{
             return {
                 name: e.name,
                 img: e.img,
-                type: e.type,
+                types: e.type,
                 createdInDb: e.createdInDb
             }
         })

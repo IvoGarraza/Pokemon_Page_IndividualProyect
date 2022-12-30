@@ -6,7 +6,7 @@ const Cards = (props) => {
   return (
     <div className={styles.Card}>
       <div className={``}>
-        <img>{props.img}</img>
+        <img src={props.img}></img>
         <div>
             <h3>{props.title}</h3>
             <p>{props.stats}</p>

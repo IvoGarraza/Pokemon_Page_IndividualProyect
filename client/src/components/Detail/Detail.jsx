@@ -8,7 +8,7 @@ const Detail = () => {
     <DetailStyle>
         <div className='detailContainer'>
             <div className='cardContainerDetail'>
-                <p>{charmander.id}</p>
+                <span>{charmander.id}</span>
                 <h2>{charmander.name}</h2>
                 <img src={imagen}/>
                 <div className='healthContainer'>

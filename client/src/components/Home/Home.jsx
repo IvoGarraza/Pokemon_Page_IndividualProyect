@@ -1,6 +1,8 @@
 import React from 'react'
-import Cards from './Cards/Cards'
+import Cards from '../Cards/Cards'
 import './Home.css'
+import charmander from '../../assets/test.json'
+import imagen from '../../assets/4.png'
 
 
 const Home = () => {
@@ -10,7 +12,7 @@ const Home = () => {
         <h1>Pokedex</h1>
       </div>
       <div className='cardContainer'>
-        <Cards title='Pokemon' stats='asdasdasdasdasdsdasdasd'></Cards>
+        <Cards title={charmander.name} stats={charmander.type.type} img={imagen}></Cards>
         <Cards title='Pokemon' stats='asdasdasdasdasdsdasdasd'></Cards>
         <Cards title='Pokemon' stats='asdasdasdasdasdsdasdasd'></Cards>
         <Cards title='Pokemon' stats='asdasdasdasdasdsdasdasd'></Cards>

@@ -25,13 +25,12 @@ const getInfoApi = async ()=>{
             pokemones.push(...infoApiData);
             url = infoApi.data.next
             /* console.log(pokemones) */
-        } while (url != null && pokemones.length < 100);
+        } while (url != null && pokemones.length < 1);
         /* console.log(pokemones) */
         /* return pokemones */
         //traigo la data de cada pokemon
         let pkInfo = await Promise.all(pokemones.map( async e => {
             let pokemon = await axios.get(e.url, { headers: {"Accept-Encoding": "null"}});
-            console.log(pokemon)
             return{
                 id: pokemon.data.id,
                 name: pokemon.data.name,
@@ -47,10 +46,10 @@ const getInfoApi = async ()=>{
                 speed: pokemon.data.stats[5].base_stat,
                 height: pokemon.data.height,
                 weight: pokemon.data.weight,
-                createdInDd: false,
+                createdInDb: 'false',
             }
         }))
-        /* console.log(pkInfo) */
+        console.log(pkInfo)
         return pkInfo
     } catch (error) {
         console.log('algo fallo', error)
