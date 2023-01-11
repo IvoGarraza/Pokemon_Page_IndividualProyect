@@ -30,3 +30,5 @@ const getDetail = async () =>{
         return error
     }
 }
+
+module.exports={getDetail}

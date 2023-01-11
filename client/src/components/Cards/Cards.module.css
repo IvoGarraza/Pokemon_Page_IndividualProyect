@@ -9,3 +9,12 @@
     flex-direction: column;
     border-radius: 3%;
 }
+
+.types{
+    display: flex;
+    flex-direction: row;
+}
+
+.fire{
+    background-color: rgb(224, 19, 19);
+}

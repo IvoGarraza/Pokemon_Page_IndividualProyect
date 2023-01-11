@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
+    "axios": "^1.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
@@ -23,11 +24,18 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "eslintConfig": { 
+    "extends": [ "react-app", "react-app/jest" ], 
+    "overrides": [ 
+      { 
+        "files": [
+          "*.js"
+          ], 
+        "rules": { 
+          "no-unused-expressions": "off" 
+          } 
+      } 
+    ] 
   },
   "browserslist": {
     "production": [
@@ -40,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.31.11"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { buttonLanding } from '../styles/styles.jsx'
 import styled from 'styled-components'
 import Button from './Button/Button.jsx'

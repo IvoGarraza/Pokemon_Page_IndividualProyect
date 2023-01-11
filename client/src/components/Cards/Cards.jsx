@@ -5,11 +5,14 @@ import charmander from '../../assets/test.json'
 const Cards = (props) => {
   return (
     <div className={styles.Card}>
-      <div className={``}>
+      <div>
         <img src={props.img}></img>
+        <h3>{props.title}</h3>
         <div>
-            <h3>{props.title}</h3>
-            <p>{props.stats}</p>
+            {props.stats.map(type=>(
+              <p>{type.type}</p>
+            ))}
+            {/* <p>{props.stats}</p> */}
         </div>
       </div>
     </div>

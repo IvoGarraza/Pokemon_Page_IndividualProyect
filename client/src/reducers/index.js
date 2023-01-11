@@ -11,16 +11,16 @@ export const CLEAN_DETAIL = 'CLEAN_DETAIL';
 export const CLEAN_POKEMONS = 'CLEAN_POKEMONS'
 
 
-const initialState = {
+export const initialState = {
     pokemons : [],
     allPokemons: [],
     types: [],
     pokeDetail:[]
 }
 
-const rootReducer = (state = initialState, action) =>{
+/* const rootReducer = (state = initialState, action) =>{
     switch (action.type) {
-        case GET_POKEMON:
+        case 'GET_POKEMON':
             return{
                 ...state,
                 pokemons: action.payload,
@@ -31,5 +31,26 @@ const rootReducer = (state = initialState, action) =>{
             break;
     }
 }
+ */
 
-export default rootReducer;
+export const poekmonsInitialState = []
+
+
+export const init = (state) =>{
+    return{
+        pokemons: state.pokemons
+    }
+}
+
+
+ function rootReducer(state, action){
+    switch(action.type){
+        case GET_POKEMON:
+            return{
+                ...state,
+                pokemons: action.payload
+            }
+    }
+}
+
+export default rootReducer

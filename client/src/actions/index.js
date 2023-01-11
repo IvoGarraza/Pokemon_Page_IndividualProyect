@@ -1,31 +1,25 @@
 import axios from 'axios'
-import { GET_POKEMON } from '../reducers'
-const url = 'http://localhost:3001/pokemons'
+import { GET_POKEMON, CLEAN_POKEMONS } from '../reducers'
+const url = 'http://localhost:3001/pokemon'
 
 
+async function getJson(){
+    const json = await axios.get('http://localhost:3001/pokemon')
+    return json.data
+}
 
-export function getPokemons(){
+export function allPokemones(){
     return async function(dispatch){
-        try {
-
-            var json = await axios.get( url, {
-                 headers:{
-                    "Accept-Encoding": "null"
-                 }   
-            })
-    
-            return dispatch({
-                type: GET_POKEMON,
-                payload: json.data
-            })
-            
-        } catch (error) {
-            console.log(error)
-            return error
-        }
-
+        return dispatch({
+            type: GET_POKEMON,
+            payload: getJson()
+        })
     }
 }
+
+/* export const getPokemons = async ()=> dispatch({
+    type:GET_POKEMON,
+    payload: await getJson()}) */
 
 export const cleanPokemons= (dispatch)=>{
     return dispatch({
@@ -41,7 +35,14 @@ export function reloadPokemons(){
     }
 }
 
+export function setCurrentPage(payload){
+    return{
+        type: "CURR_PAGE",
+        payload
+    }
+}
 
+/* 
 export function getType(){
     return async function(dispatch){
         var info = axios.get('http://localhost:3001/types')
@@ -50,4 +51,4 @@ export function getType(){
         type: "GET_TYPES",
         payload: inf
     })
-}
+} */
