@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import sound from '../soundGo.mp3';
+import sound from '../LandingPage/soundGo.mp3';
 import { Link, useNavigate} from 'react-router-dom';
 
 const Button = () => {

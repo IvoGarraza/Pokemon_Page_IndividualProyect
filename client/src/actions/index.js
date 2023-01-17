@@ -8,18 +8,11 @@ async function getJson(){
     return json.data
 }
 
-export function allPokemones(){
-    return async function(dispatch){
-        return dispatch({
-            type: GET_POKEMON,
-            payload: getJson()
-        })
-    }
-}
 
-/* export const getPokemons = async ()=> dispatch({
+
+export const getPokemons = async (dispatch)=> dispatch({
     type:GET_POKEMON,
-    payload: await getJson()}) */
+    payload: await getJson()})
 
 export const cleanPokemons= (dispatch)=>{
     return dispatch({

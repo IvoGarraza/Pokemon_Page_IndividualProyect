@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Router, Routes  } from "react-router-dom";
-import LandingPage from './components/LandingPage.jsx';
+import LandingPage from './components/LandingPage/LandingPage.jsx';
 import Create from './components/Create/Create';
 import { Navbar } from './components/Navbar/Navbar';
 import Detail from './components/Detail/Detail';

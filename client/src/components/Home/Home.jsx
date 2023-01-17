@@ -6,14 +6,7 @@ import { useEffect } from "react";
 import Cards from '../Cards/Cards'
 import './Home.css'
 import { Navbar } from "../Navbar/Navbar";
-import { allPokemones } from "../../actions";
-
-
-
-async function getJson(){
-  const json = await axios.get('http://localhost:3001/pokemon')
-  return json.data
-}
+import { allPokemones, getPokemons } from "../../actions";
 
 
 
@@ -23,21 +16,17 @@ async function getJson(){
 const Home = () => {
     const [state, dispatch] = useReducer(rootReducer, initialState, init)
     
-    const getPokemons = async ()=> dispatch({
-      type:GET_POKEMON,
-      payload: await getJson()})
-    
     useEffect(()=>{
-      getPokemons()
-      /* allPokemones(dispatch) */
+      getPokemons(dispatch)
     })
+
   return (
     <div>
       <Navbar></Navbar>
       <div className="cardContainer">
           {console.log(state.pokemons)}
           {state.pokemons.map((pokemones, index)=>(
-            <Cards title={pokemones.name} stats={pokemones.types/* .map((type) => type.type ) */} img={pokemones.img} />
+            <Cards title={pokemones.name} stats={pokemones.types} img={pokemones.img} />
           ))}
       </div>
     </div>

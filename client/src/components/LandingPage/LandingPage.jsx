@@ -1,18 +1,17 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { buttonLanding } from '../styles/styles.jsx'
+import { buttonLanding } from '../../styles/styles.jsx'
 import styled from 'styled-components'
-import Button from './Button/Button.jsx'
+import Button from '../Button/Button.jsx'
 
 const LandingPage = () => {
   
   return (
     <landingStyle>
-      <h1>Landing page</h1>
+      <h1 className='titleLanding'>Landing page</h1>
       <p>
-        Welcome to Pokemon Page, here can fin a list of pokemons and his stats
+        Welcome to Pokemon Page, here can find a list of pokemons and his stats
       </p>
-      {/* <Link to='/home'><button id="reproductor">Ingresar</button></Link> */}
       <Button></Button>
     </landingStyle>
   )
@@ -26,7 +25,8 @@ const landingStyle = styled.div`
     height: 500px;
     border-color: 1px solid black;
     background-color: white;
-    h1{
-      color: white
+    .titleLanding{
+      color: white;
+      
     }
 `
